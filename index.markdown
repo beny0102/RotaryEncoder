@@ -1,8 +1,17 @@
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+layout: home
+---
+
+<script src="https://cdn.tailwindcss.com"></script>
+
 ![](imagenes/portada.png)
-# INSTITUTO TECNOLOGICO DE TIJUANA
-# PANTOJA REYES BENY SAMUEL
-# 19211703
-# Rotary Encoder
+<h1 class="text-center text-3xl">INSTITUTO TECNOLOGICO DE TIJUANA</h1>
+<h1 class="text-center text-3xl">PANTOJA REYES BENY SAMUEL</h1>
+<h1 class="text-center text-3xl">19211703</h1>
+<h1 class="text-center text-3xl">Rotary Encoder</h1>
 
 ### ¿Qué es?
 El `Rotary Encoder` es un dispositivo que mide la posición angular (rotación) o eje. Lo convierte en una señal para encontrar la posición y dirección de la rotación. Es principalmente usado en motoress para tener un mejor control y en interfaces de usuarios para reemplazar potenciómetros. Algunos de estos dispositivos vienen con un botón para presionar.
@@ -111,3 +120,5 @@ Aquí hay una [demostración](https://wokwi.com/projects/359922595891764225).
 [upesy](https://www.upesy.com/blogs/tutorials/rotary-encoder-raspberry-pi-pico-on-micro-python)
 [MicroPython for Kids](https://www.coderdojotc.org/micropython/sensors/10-rotary-encoder/)
 
+
+<iframe class="w-full h-screen" src="https://wokwi.com/projects/359922595891764225" />

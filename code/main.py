@@ -1,36 +1,3 @@
-![](imagenes/portada.png)
-# INSTITUTO TECNOLOGICO DE TIJUANA
-# PANTOJA REYES BENY SAMUEL
-# 19211703
-# Rotary Encoder
-
-### ¿Qué es?
-El `Rotary Encoder` es un dispositivo que mide la posición angular (rotación) o eje. Lo convierte en una señal para encontrar la posición y dirección de la rotación. Es principalmente usado en motoress para tener un mejor control y en interfaces de usuarios para reemplazar potenciómetros. Algunos de estos dispositivos vienen con un botón para presionar.
-
-### Diferencias entre el Rotary Encoder y el potenciómetro
-Para la mayoría, el rotary encoder `KY-40` es lo mismo que un potenciómetro. En realidad, un potenciómetro es un sensor analógico y el `Rotary Encoder`  es digital.
-
-El `Rotary Encoder`  es un dispositivo que puede detectar cuantas veces rota y manda una señal cada vez que esto pasa. Puede rotar una cantidad infinita de veces. El tacto de ambos en sentido físico es distinto, mientras que el `Rotary Encoder` tiene un movimiento un poco más brusco, el potenciómetro es más suave.
-
-### Rotary Encoder en la Pi Pico
-El `Rotary Encoder` tiene dos señales para saber la posicion `CLK` y `DT`. El pin `SW` está conectado al botón integrado.
-
-Tabla de las conexiones:
-
-| Rotary Encoder | Raspberry Pi Pico |
-|----------------|-------------------|
-| `CLK`          | `GP14`            |
-| `DT`           | `GP13`            |
-| `SW`           | No se usa         |
-| `+`            | `3v3`             |
-| `GND`          | `GND`             |
-
-Queda de la siguiente forma el circuito:
-![](imagenes/circuit.png)
-
-### Uso
-Para hacer uso del dispositivo usaremos la siguiente clase:
-```python
 import machine
 import utime as time
 from machine import Pin
@@ -80,11 +47,8 @@ class Rotary:
     def call_handlers(self, type):
         for handler in self.handlers:
             handler(type)
-```
-Esta clase servira como driver entre el dispositivo y la pico.
 
-Y el codigo será el siguiente:
-```python
+
 rotary = Rotary(13, 14, 0)
 val = 0
 
@@ -105,9 +69,3 @@ rotary.add_handler(rotary_changed)
 
 while True:
     time.sleep(0.1)
-```
-Aquí hay una [demostración](https://wokwi.com/projects/359922595891764225).
-### Fuentes
-[upesy](https://www.upesy.com/blogs/tutorials/rotary-encoder-raspberry-pi-pico-on-micro-python)
-[MicroPython for Kids](https://www.coderdojotc.org/micropython/sensors/10-rotary-encoder/)
-
